@@ -1,5 +1,5 @@
 class Stone{
-    constructor(x,y,options){
+    constructor(x,y,width,height,options){
         var options = {
             isStatic:false,
             restitution:0,
@@ -11,6 +11,7 @@ class Stone{
         this.height = height;
         this.image = loadImage("polygon.png");
         World.add(world, this.body);
+        
       }
       display(){
         var angle = this.body.angle;

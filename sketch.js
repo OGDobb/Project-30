@@ -36,7 +36,8 @@ function setup() {
 
     block9 = new Block(390,155,30,40);
 
-    stone = new Stone(50,200,10,10);
+    stone = new Stone(50,200,50,50);
+    
 
     slingshot = new SlingShot(stone.body, {x : 50, y : 200});
 
