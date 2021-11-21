@@ -1,4 +1,4 @@
-class Block{
+class Block{  
     constructor(x,y,width,height){
         var options = {
             isStatic:false,
@@ -6,6 +6,7 @@ class Block{
             friction:1,
             density:0.2
         }
+        this.Visibility=255;
         this.body = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
         this.height = height;
@@ -21,8 +22,22 @@ class Block{
         imageMode(CENTER);
         image(this.image, 0, 0, this.width, this.height);
         //console.log(this.body.speed);
-    
-       
+        
+
+
+        if (this.body.speed<5) {
+          imageMode(CENTER);
+          image(this.image, 0, 0, this.width, this.height);
+        }
+
+         else{
+           World.remove(world,this.body);
+          push();
+          this.Visibility=this.Visibility-5;
+          tint(255,this.Visibility);
+          image(this.image,this.body.position.x,this.body.position.y,50,50);
+          pop();
+        }
         pop();
       }
       
